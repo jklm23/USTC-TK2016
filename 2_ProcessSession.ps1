@@ -7,8 +7,8 @@
 
 $SESSIONS_COUNT_LIMIT_MIN = 0
 $SESSIONS_COUNT_LIMIT_MAX = 60000
-$TRIMED_FILE_LEN = 784
-$SOURCE_SESSION_DIR = "Flow\L7"
+$TRIMED_FILE_LEN = 784  # 最大长度
+$SOURCE_SESSION_DIR = "2_Session\L7"
 
 echo "If Sessions more than $SESSIONS_COUNT_LIMIT_MAX we only select the largest $SESSIONS_COUNT_LIMIT_MAX."
 echo "Finally Selected Sessions:"
@@ -62,7 +62,7 @@ foreach($p in $paths)
                 $padding = [Byte[]] (,0x00 * ([math]::abs($len)))
                 $content = $content += $padding
             }
-            Set-Content -value $content -encoding byte -path "$($p[1])\$($d.Name)\$($f.Name)"
+            Set-Content -value $content -AsByteStream -path "$($p[1])\$($d.Name)\$($f.Name)"
         }        
     }
 }
