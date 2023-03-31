@@ -84,3 +84,12 @@ This repository is a toolkit called "USTC-TK2016", which is used to parse networ
 ## License
 
 [Mozilla Public License Version 2.0](LICENSE)
+
+
+## 数据集标签说明
+
+39行for循环的`i`作为标签id，一个index对应`3_ProcessedSession\TrimedSession\Train`目录中的一个文件夹
+
+![1](4_Png/1.png)
+
+![2](4_Png/2.png)
